@@ -2,5 +2,6 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="exediff workspace">
 		<Project filename="exediff.cbp" />
+		<Project filename="exediff_mgw.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

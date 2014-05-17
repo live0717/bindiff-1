@@ -7,8 +7,8 @@
 		<Option compiler="msvc10" />
 		<Build>
 			<Target title="Debug Win32">
-				<Option output="exediff" prefix_auto="1" extension_auto="1" />
-				<Option object_output="Debug" />
+				<Option output="bin/Debug/exediff" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="msvc10" />
 				<Compiler>
@@ -22,8 +22,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release Win32">
-				<Option output="exediff" prefix_auto="1" extension_auto="1" />
-				<Option object_output="Release" />
+				<Option output="bin/Release/exediff" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="msvc10" />
 				<Compiler>
@@ -42,6 +42,7 @@
 		<Unit filename="../src/resource.h" />
 		<Extensions>
 			<code_completion />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
