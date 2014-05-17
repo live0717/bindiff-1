@@ -14,6 +14,7 @@
 #include <io.h>
 #include <locale.h>
 #include <time.h>
+#include <ctype.h>
 //using namespace std;
 
 //------------------------------------------------------------------------
@@ -334,21 +335,21 @@ const char* ImageCharacteristicsString(WORD flags, char* buf=NULL)
 	sprintf(buf, "%04X(", flags);
 
 	#define M(f, id)	if (flags & f) strcat(buf, id ", ")
-	M(IMAGE_FILE_RELOCS_STRIPPED, "relocations stripped");		// Relocation information is stripped from the file. 
-	M(IMAGE_FILE_EXECUTABLE_IMAGE, "executable image");			// The file is executable (there are no unresolved external references). 
-	M(IMAGE_FILE_LINE_NUMS_STRIPPED, "linenumbers stripped");	// Line numbers are stripped from the file. 
-	M(IMAGE_FILE_LOCAL_SYMS_STRIPPED, "symbols stripped");		// Local symbols are stripped from file. 
-	M(IMAGE_FILE_AGGRESIVE_WS_TRIM, "AGGRESIVE_WS_TRIM");		// Aggressively trim the working set. 
-	M(IMAGE_FILE_LARGE_ADDRESS_AWARE, "LARGE_ADDRESS_AWARE");	// The application can handle addresses larger than 2 GB. 
-	M(IMAGE_FILE_BYTES_REVERSED_LO, "BYTES_REVERSED_LO");		// Bytes of the word are reversed. 
-	M(IMAGE_FILE_32BIT_MACHINE,  "32BIT_MACHINE");				// Computer supports 32-bit words. 
-	M(IMAGE_FILE_DEBUG_STRIPPED, "debuginfo stripped");			// Debugging information is stored separately in a .dbg file. 
-	M(IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP, "REMOVABLE_RUN_FROM_SWAP");// If the image is on removable media, copy and run from the swap file. 
-	M(IMAGE_FILE_NET_RUN_FROM_SWAP, "NET_RUN_FROM_SWAP");		// If the image is on the network, copy and run from the swap file. 
-	M(IMAGE_FILE_SYSTEM, "system file");						// SYSTEM System file. 
-	M(IMAGE_FILE_DLL, "DLL file");								//  DLL file. 
-	M(IMAGE_FILE_UP_SYSTEM_ONLY, "UP_SYSTEM_ONLY");				// File should be run only on a uniprocessor computer. 
-	M(IMAGE_FILE_BYTES_REVERSED_HI, "BYTES_REVERSED_HI");		// Bytes of the word are reversed. 
+	M(IMAGE_FILE_RELOCS_STRIPPED, "relocations stripped");		// Relocation information is stripped from the file.
+	M(IMAGE_FILE_EXECUTABLE_IMAGE, "executable image");			// The file is executable (there are no unresolved external references).
+	M(IMAGE_FILE_LINE_NUMS_STRIPPED, "linenumbers stripped");	// Line numbers are stripped from the file.
+	M(IMAGE_FILE_LOCAL_SYMS_STRIPPED, "symbols stripped");		// Local symbols are stripped from file.
+	M(IMAGE_FILE_AGGRESIVE_WS_TRIM, "AGGRESIVE_WS_TRIM");		// Aggressively trim the working set.
+	M(IMAGE_FILE_LARGE_ADDRESS_AWARE, "LARGE_ADDRESS_AWARE");	// The application can handle addresses larger than 2 GB.
+	M(IMAGE_FILE_BYTES_REVERSED_LO, "BYTES_REVERSED_LO");		// Bytes of the word are reversed.
+	M(IMAGE_FILE_32BIT_MACHINE,  "32BIT_MACHINE");				// Computer supports 32-bit words.
+	M(IMAGE_FILE_DEBUG_STRIPPED, "debuginfo stripped");			// Debugging information is stored separately in a .dbg file.
+	M(IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP, "REMOVABLE_RUN_FROM_SWAP");// If the image is on removable media, copy and run from the swap file.
+	M(IMAGE_FILE_NET_RUN_FROM_SWAP, "NET_RUN_FROM_SWAP");		// If the image is on the network, copy and run from the swap file.
+	M(IMAGE_FILE_SYSTEM, "system file");						// SYSTEM System file.
+	M(IMAGE_FILE_DLL, "DLL file");								//  DLL file.
+	M(IMAGE_FILE_UP_SYSTEM_ONLY, "UP_SYSTEM_ONLY");				// File should be run only on a uniprocessor computer.
+	M(IMAGE_FILE_BYTES_REVERSED_HI, "BYTES_REVERSED_HI");		// Bytes of the word are reversed.
 	#undef M
 
 	char* last_comma = strrchr(buf, ',');

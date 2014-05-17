@@ -25,3 +25,4 @@
 /exe-dll-diff/build/*.layout
 /exe-dll-diff/build/vc100.idb
 /exe-dll-diff/build/vc100.pdb
+/exe-dll-diff/build/*.depend
