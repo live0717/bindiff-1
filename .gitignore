@@ -19,3 +19,9 @@
 *.exe
 *.out
 *.app
+/*.bak
+/exe-dll-diff/build/Debug
+/exe-dll-diff/build/Release
+/exe-dll-diff/build/*.layout
+/exe-dll-diff/build/vc100.idb
+/exe-dll-diff/build/vc100.pdb

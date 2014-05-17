@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="exediff" />
+		<Option pch_mode="2" />
+		<Option compiler="msvc10" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="exediff" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug" />
+				<Option type="1" />
+				<Option compiler="msvc10" />
+				<Compiler>
+					<Add option="/DWIN32" />
+					<Add option="/D_DEBUG" />
+					<Add option="/D_CONSOLE" />
+					<Add option="/W3" />
+					<Add option="/ZI" />
+					<Add option="/Od" />
+					<Add option="/MDd" />
+				</Compiler>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="exediff" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option type="1" />
+				<Option compiler="msvc10" />
+				<Compiler>
+					<Add option="/DWIN32" />
+					<Add option="/DNDEBUG" />
+					<Add option="/D_CONSOLE" />
+					<Add option="/W3" />
+					<Add option="/Zi" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="../src/exediff.cpp" />
+		<Unit filename="../src/exediff.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="../src/resource.h" />
+		<Extensions>
+			<code_completion />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
